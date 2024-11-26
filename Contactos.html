@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/icono.ico" />
+    <title>EpicDownloads</title>
+    <style>
+      /* Fondo de navbar más oscuro */
+      .navbar-custom {
+        background-color: #000000; /* Negro profundo */
+      }
+      .navbar-custom .navbar-brand,
+      .navbar-custom .nav-link,
+      .navbar-custom .navbar-toggler-icon {
+        color: #ffffff; /* Color del texto en blanco */
+      }
+
+      /* Estilo del pie de página */
+      .footer {
+        background-color: #222;
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .navbar-toggler {
+        border-color: #fff; /* Borde blanco */
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
+
+      .suggestion-form {
+        margin: 20px 0;
+      }
+    </style>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/index.html">Logo</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Descargar de Redes Sociales
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="Facebook.html">Facebook</a></li>
+            <li><a class="dropdown-item" href="Instagram.html">Instagram</a></li>
+            <li><a class="dropdown-item" href="Spotify.html">Spotify</a></li>
+            <li><a class="dropdown-item" href="Tik_Tok.html">TikTok</a></li>
+            <li><a class="dropdown-item" href="Twitter.html">Twitter</a></li>
+            <li><a class="dropdown-item" href="Youtube.html">YouTube</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Contactos.html">Contactos</a>
+        </li>
+      </ul>
+      <!-- Buscador alineado a la derecha -->
+      <form class="d-flex ml-auto">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Sección de Sugerencias y Consultas -->
+<section id="sugerencias" class="container suggestion-form">
+    <h2 class="text-center">Sugerencias y Consultas</h2>
+    <form>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" required>
+      </div>
+      <div class="mb-3">
+        <label for="sugerencia" class="form-label">Sugerencia o Consulta</label>
+        <textarea class="form-control" id="sugerencia" rows="3" placeholder="Escribe tu sugerencia o consulta aquí" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    
+    <div class="mt-4 text-center">
+      <h5>Contáctanos:</h5>
+      <p>
+        WhatsApp: <a href="https://wa.me/+59178911358?text=Hola%20buenas%20tardes%2C%20en%20que%20le%20podemos%20ayudar%3F" target="_blank">+591 78911358</a><br>
+        Telegram: <a href="https://t.me/+59178911358?text=Hola%20buenas%20tardes%2C%20en%20que%20le%20podemos%20ayudar%3F" target="_blank">+591 78911358</a>
+      </p>
+    </div>
+  </section>
+  
+
+<!-- Pie de página -->
+<footer class="footer">
+  &copy; JOSE ANDRES MAMANI MOLLERICONA
+</footer>
+
+<!-- Scripts de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
