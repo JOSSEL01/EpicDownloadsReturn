@@ -111,10 +111,10 @@
           </li>
         </ul>
         <!-- Buscador -->
-        <form class="d-flex ml-auto">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <form class="d-flex ml-auto" onsubmit="return searchGames(event)">
+          <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+      </form>
       </div>
     </div>
   </nav>
@@ -130,6 +130,7 @@
             <a href="https://drive.google.com/file/d/11tgc_2-RLaNdHRY3OfMF6uJ-DtY3MkZJ/view?usp=sharing">
                 <img src="../assets/Icons/unnaaaaaaaaaaaaaaaaaaaaaamed.png" alt="AIDA64 para Android 4.4+" class="img-fluid" loading="lazy">
                 <p>AIDA64 v2.05 (Android 4.4+)</p>
+            </a>
         </div>
       <!-- Card 1 -->
         <div class="col text-center">
@@ -138,13 +139,31 @@
             <p>DevCheck Device & System Info v5.33 (Android 4.1+)</p>
           </a>
         </div>
-    </div>
-    <div class="col text-center">
-        <a href="https://drive.google.com/file/d/1XVMdI8HmaGb87Yntoex21XZ8oIvJJTjp/view?usp=sharing">
-            <img src="../assets/Icons/icon_OHy4y1W-fJCNhHHOBCM9V_cxZNJJgbcNkB-x7UDTY9Q=.png" alt="NewPipe para Android 5.0+" class="img-fluid" loading="lazy">
-            <p>NewPipe v0.27.3 (Android 5.0+)</p>
+        <div class="col text-center">
+            <a href="https://drive.google.com/file/d/1XVMdI8HmaGb87Yntoex21XZ8oIvJJTjp/view?usp=sharing">
+                <img src="../assets/Icons/icon_OHy4y1W-fJCNhHHOBCM9V_cxZNJJgbcNkB-x7UDTY9Q=.png" alt="NewPipe para Android 5.0+" class="img-fluid" loading="lazy">
+                <p>NewPipe v0.27.3 (Android 5.0+)</p>
+            </a>
+        </div>
     </div>
 </div>
+
+
+<script>
+    function searchGames(event) {
+        event.preventDefault();  // Evitar el envío del formulario
+        var query = document.getElementById('searchInput').value.toLowerCase();
+        var games = document.querySelectorAll('.col p');
+        
+        games.forEach(function(game) {
+            if (game.innerText.toLowerCase().includes(query)) {
+                game.parentElement.style.display = ''; // Mostrar el juego si coincide
+            } else {
+                game.parentElement.style.display = 'none'; // Ocultar el juego si no coincide
+            }
+        });
+    }
+    </script>
 <footer class="footer">&copy; JOSE ANDRES MAMANI MOLLERICONA</footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
