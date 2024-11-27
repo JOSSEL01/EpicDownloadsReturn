@@ -111,7 +111,7 @@
           </li>
         </ul>
         <!-- Buscador -->
-        <form class="d-flex ml-auto" onsubmit="return searchGames(event)">
+        <form class="d-flex ml-auto" onsubmit="return searchApps(event)">
           <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
@@ -154,20 +154,20 @@
 
 
 <script>
-    function searchGames(event) {
-        event.preventDefault();  // Evitar el envío del formulario
-        var query = document.getElementById('searchInput').value.toLowerCase();
-        var games = document.querySelectorAll('.col p');
-        
-        games.forEach(function(game) {
-            if (game.innerText.toLowerCase().includes(query)) {
-                game.parentElement.style.display = ''; // Mostrar el juego si coincide
-            } else {
-                game.parentElement.style.display = 'none'; // Ocultar el juego si no coincide
-            }
-        });
-    }
-    </script>
+  function searchApps(event) {
+      event.preventDefault();  // Evitar el envío del formulario
+      var query = document.getElementById('searchInput').value.toLowerCase();
+      var games = document.querySelectorAll('.col p');
+      
+      games.forEach(function(game) {
+          if (game.innerText.toLowerCase().includes(query)) {
+              game.parentElement.style.display = ''; // Mostrar el juego si coincide
+          } else {
+              game.parentElement.style.display = 'none'; // Ocultar el juego si no coincide
+          }
+      });
+  }
+  </script>
 <footer class="footer">&copy; JOSE ANDRES MAMANI MOLLERICONA</footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
