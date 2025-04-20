@@ -14,13 +14,14 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #f8f9fa;
+            background-color: #f8f9fa; /* Fondo de respaldo */
             margin: 0;
-            /* Fondo dinámico que cambia diariamente */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
+            /* Fondo de respaldo en caso de que las imágenes no se carguen */
+            background-image: linear-gradient(to bottom, #1e3c72, #2a5298); /* Gradiente de respaldo */
         }
         h2 {
             margin-top: 20px;
@@ -462,7 +463,20 @@
         const today = new Date();
         const dayOfMonth = today.getDate(); // Día del mes (1-31)
         const backgroundIndex = (dayOfMonth - 1) % backgrounds.length; // Selecciona un fondo basado en el día
-        document.body.style.backgroundImage = `url('${backgrounds[backgroundIndex]}')`;
+        const backgroundUrl = backgrounds[backgroundIndex];
+        console.log(`Intentando cargar fondo: ${backgroundUrl}`); // Depuración
+
+        // Crear una imagen para probar la carga del fondo
+        const testImage = new Image();
+        testImage.src = backgroundUrl;
+        testImage.onload = () => {
+            console.log(`Fondo cargado exitosamente: ${backgroundUrl}`);
+            document.body.style.backgroundImage = `url('${backgroundUrl}')`;
+        };
+        testImage.onerror = () => {
+            console.error(`No se pudo cargar el fondo: ${backgroundUrl}`);
+            // Usar el fondo de respaldo (definido en CSS)
+        };
 
         // Verificar si las imágenes cargan correctamente
         document.querySelectorAll('.card img').forEach(img => {
@@ -482,8 +496,7 @@
         // Generar los botones de paginación dinámicamente
         const pagination = document.getElementById('pagination');
         const prevPage = document.getElementById('prevPage');
-        const nextPage = document.getElementInull
-dById('nextPage');
+        const nextPage = document.getElementById('nextPage');
 
         function generatePagination() {
             // Limpiar los botones existentes, excepto "Anterior" y "Siguiente"
@@ -559,6 +572,7 @@ dById('nextPage');
         // Búsqueda
         document.getElementById('searchInput').addEventListener('input', function () {
             const query = this.value.trim().toLowerCase();
+            console.log(`Buscando: ${query}`); // Depuración
             const allItems = appContainer.querySelectorAll('.col');
 
             allItems.forEach(item => {
@@ -571,10 +585,13 @@ dById('nextPage');
                 }
 
                 const text = textElement.innerText.toLowerCase();
+                console.log(`Comparando: ${text}`); // Depuración
                 if (text.includes(query)) {
                     item.classList.remove('hidden');
+                    console.log(`Mostrando: ${text}`); // Depuración
                 } else {
                     item.classList.add('hidden');
+                    console.log(`Ocultando: ${text}`); // Depuración
                 }
             });
 
