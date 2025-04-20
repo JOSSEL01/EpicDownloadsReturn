@@ -353,7 +353,7 @@
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/1ZZHl78U9r2b2-g5BAi7-R3nW4M0VrALs/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar SmartTube v24.89 para Android">
                     <div class="card">
-                        <img src="../assets/Icons/smartube.webp" alt="Ícono de SmartTube para Android 4.2+" class="img-fluid" loading="lazy">
+                        <img src="../assets/Icons/smarttube.webp" alt="Ícono de SmartTube para Android 4.2+" class="img-fluid" loading="lazy">
                         <p>SmartTube v24.89 (Android 4.2+)</p>
                     </div>
                 </a>
@@ -463,27 +463,7 @@
         const today = new Date();
         const dayOfMonth = today.getDate(); // Día del mes (1-31)
         const backgroundIndex = (dayOfMonth - 1) % backgrounds.length; // Selecciona un fondo basado en el día
-        const backgroundUrl = backgrounds[backgroundIndex];
-        console.log(`Intentando cargar fondo: ${backgroundUrl}`); // Depuración
-
-        // Crear una imagen para probar la carga del fondo
-        const testImage = new Image();
-        testImage.src = backgroundUrl;
-        testImage.onload = () => {
-            console.log(`Fondo cargado exitosamente: ${backgroundUrl}`);
-            document.body.style.backgroundImage = `url('${backgroundUrl}')`;
-        };
-        testImage.onerror = () => {
-            console.error(`No se pudo cargar el fondo: ${backgroundUrl}`);
-            // Usar el fondo de respaldo (definido en CSS)
-        };
-
-        // Verificar si las imágenes cargan correctamente
-        document.querySelectorAll('.card img').forEach(img => {
-            img.addEventListener('error', () => {
-                console.error(`No se pudo cargar la imagen: ${img.src}`);
-            });
-        });
+        document.body.style.backgroundImage = `url('${backgrounds[backgroundIndex]}')`;
 
         // Paginación
         const itemsPerPage = 15; // 3 filas x 5 columnas = 15 aplicaciones por página
@@ -499,7 +479,7 @@
         const nextPage = document.getElementById('nextPage');
 
         function generatePagination() {
-            // Limpiar los botones existentes, excepto "Anterior" y "Siguiente"
+            // Limpiar los botones existentes, excepto "  "Anterior" y "Siguiente"
             const existingPageItems = pagination.querySelectorAll('.page-item:not(#prevPage):not(#nextPage)');
             existingPageItems.forEach(item => item.remove());
 
@@ -572,7 +552,6 @@
         // Búsqueda
         document.getElementById('searchInput').addEventListener('input', function () {
             const query = this.value.trim().toLowerCase();
-            console.log(`Buscando: ${query}`); // Depuración
             const allItems = appContainer.querySelectorAll('.col');
 
             allItems.forEach(item => {
@@ -585,13 +564,10 @@
                 }
 
                 const text = textElement.innerText.toLowerCase();
-                console.log(`Comparando: ${text}`); // Depuración
                 if (text.includes(query)) {
                     item.classList.remove('hidden');
-                    console.log(`Mostrando: ${text}`); // Depuración
                 } else {
                     item.classList.add('hidden');
-                    console.log(`Ocultando: ${text}`); // Depuración
                 }
             });
 
