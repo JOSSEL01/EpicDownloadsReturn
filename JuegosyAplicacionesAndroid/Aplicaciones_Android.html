@@ -15,6 +15,7 @@
             flex-direction: column;
             min-height: 100vh;
             background-color: #f8f9fa;
+            margin: 0;
         }
         h2 {
             margin-top: 20px;
@@ -27,6 +28,7 @@
             color: #fff;
             text-align: center;
             padding: 1rem;
+            width: 100%;
             margin-top: auto;
         }
         .navbar-custom {
@@ -72,6 +74,26 @@
         .col.hidden {
             opacity: 0;
             display: none;
+        }
+        .container {
+            flex: 1 0 auto;
+            margin-bottom: 3rem;
+        }
+        .pagination {
+            justify-content: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .page-item.active .page-link {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .page-link {
+            color: #007bff;
+        }
+        .page-link:hover {
+            color: #0056b3;
+            background-color: #e9ecef;
         }
     </style>
 </head>
@@ -142,7 +164,7 @@
     </div>
 
     <div class="container">
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4" id="appContainer">
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/11tgc_2-RLaNdHRY3OfMF6uJ-DtY3MkZJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar AIDA64 v2.05 para Android">
                     <div class="card">
@@ -248,16 +270,20 @@
                 </a>
             </div>
             <div class="col text-center">
-              <a href="https://drive.google.com/file/d/1BA_3mEAIA8zqcxjtpeiI9UpTO5UMOCqg/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar MobiOffice Word, Sheets, PDF v13.1.43223 para Android">
-                <div class="card">
-                  <img src="../assets/Icons/MobiOffice_Word,Sheets,PDF.webp" alt="Ícono de MobiOffice Word, Sheets, PDF Android 5.0+" class="img-fluid" loading="lazy">
-                  <p>MobiOffice Word, Sheets, PDF v13.1.43223 (Android 5.0+)</p>
+                <a href="https://drive.google.com/file/d/1BA_3mEAIA8zqcxjtpeiI9UpTO5UMOCqg/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar MobiOffice Word, Sheets, PDF v13.1.43223 para Android">
+                    <div class="card">
+                        <img src="../assets/Icons/MobiOffice_Word,Sheets,PDF.webp" alt="Ícono de MobiOffice Word, Sheets, PDF Android 5.0+" class="img-fluid" loading="lazy">
+                        <p>MobiOffice Word, Sheets, PDF v13.1.43223 (Android 5.0+)</p>
+                    </div>
+                </a>
             </div>
             <div class="col text-center">
-              <a href="https://drive.google.com/file/d/1b2b8MTjIorXVohCSURnKHGGtZ6iKMTsT/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar MobiOffice Word, Sheets, PDF v13.1.43223 para Android">
-                <div class="card">
-                  <img src="../assets/Icons/MobiOffice_Word,Sheets,PDF.webp" alt="Ícono de MobiOffice Word, Sheets, PDF Android 7.0+" class="img-fluid" loading="lazy">
-                  <p>MobiOffice Word, Sheets, PDF v15.3.55572 (Android 7.0+)</p>
+                <a href="https://drive.google.com/file/d/1b2b8MTjIorXVohCSURnKHGGtZ6iKMTsT/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar MobiOffice Word, Sheets, PDF v15.3.55572 para Android">
+                    <div class="card">
+                        <img src="../assets/Icons/MobiOffice_Word,Sheets,PDF.webp" alt="Ícono de MobiOffice Word, Sheets, PDF Android 7.0+" class="img-fluid" loading="lazy">
+                        <p>MobiOffice Word, Sheets, PDF v15.3.55572 (Android 7.0+)</p>
+                    </div>
+                </a>
             </div>
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/1XVMdI8HmaGb87Yntoex21XZ8oIvJJTjp/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar NewPipe v0.27.3 para Android">
@@ -324,12 +350,12 @@
                 </a>
             </div>
             <div class="col text-center">
-              <a href="https://drive.google.com/file/d/1lWjZbC1OqSJ1lQhobmGncUAL63em3c9P/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar Termux v0.119.0-beta.1 para Android">
-                  <div class="card">
-                      <img src="../assets/Icons/termux.webp" alt="Ícono de Termux para Android 5.0+" class="img-fluid" loading="lazy">
-                      <p>Termux v0.119.0-beta.1 (Android 5.0+)</p>
-                  </div>
-              </a>
+                <a href="https://drive.google.com/file/d/1lWjZbC1OqSJ1lQhobmGncUAL63em3c9P/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar Termux v0.119.0-beta.1 para Android">
+                    <div class="card">
+                        <img src="../assets/Icons/termux.webp" alt="Ícono de Termux para Android 5.0+" class="img-fluid" loading="lazy">
+                        <p>Termux v0.119.0-beta.1 (Android 5.0+)</p>
+                    </div>
+                </a>
             </div>
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/1HIWfEuoE_eScxb9AOvW8aLYK-mSinW7z/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar WPS Office v18.15.1 para Android">
@@ -340,22 +366,121 @@
                 </a>
             </div>
         </div>
+
+        <!-- Paginación -->
+        <nav aria-label="Paginación de aplicaciones">
+            <ul class="pagination" id="pagination">
+                <li class="page-item" id="prevPage">
+                    <a class="page-link" href="#" aria-label="Anterior">
+                        <span aria-hidden="true">&laquo; Anterior</span>
+                    </a>
+                </li>
+                <!-- Los números de página se generarán dinámicamente -->
+                <li class="page-item" id="nextPage">
+                    <a class="page-link" href="#" aria-label="Siguiente">
+                        <span aria-hidden="true">Siguiente &raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
-    <footer class="footer">© JOSE ANDRES MAMANI MOLLERICONA</footer>
+    <footer class="footer">
+        © <a href="../Contactos.html" style="color: #fff; text-decoration: none;">JOSE ANDRES MAMANI MOLLERICONA</a>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
+        // Paginación
+        const itemsPerPage = 10; // Número de aplicaciones por página
+        const appContainer = document.getElementById('appContainer');
+        const items = appContainer.querySelectorAll('.col');
+        const totalItems = items.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        let currentPage = 1;
+
+        // Generar los botones de paginación dinámicamente
+        const pagination = document.getElementById('pagination');
+        const prevPage = document.getElementById('prevPage');
+        const nextPage = document.getElementById('nextPage');
+
+        function generatePagination() {
+            // Limpiar los botones existentes, excepto "Anterior" y "Siguiente"
+            const existingPageItems = pagination.querySelectorAll('.page-item:not(#prevPage):not(#nextPage)');
+            existingPageItems.forEach(item => item.remove());
+
+            // Generar botones para cada página
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.classList.add('page-item');
+                if (i === currentPage) li.classList.add('active');
+                li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+                li.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    showPage(currentPage);
+                    updatePagination();
+                });
+                pagination.insertBefore(li, nextPage);
+            }
+        }
+
+        // Mostrar la página actual
+        function showPage(page) {
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+
+            items.forEach((item, index) => {
+                if (index >= start && index < end) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Actualizar estado de los botones "Anterior" y "Siguiente"
+            prevPage.classList.toggle('disabled', page === 1);
+            nextPage.classList.toggle('disabled', page === totalPages);
+        }
+
+        // Actualizar los botones de paginación
+        function updatePagination() {
+            const pageItems = pagination.querySelectorAll('.page-item:not(#prevPage):not(#nextPage)');
+            pageItems.forEach((item, index) => {
+                item.classList.toggle('active', index + 1 === currentPage);
+            });
+        }
+
+        // Evento para el botón "Anterior"
+        prevPage.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+                updatePagination();
+            }
+        });
+
+        // Evento para el botón "Siguiente"
+        nextPage.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+                updatePagination();
+            }
+        });
+
+        // Inicializar paginación
+        generatePagination();
+        showPage(currentPage);
+
+        // Búsqueda
         document.getElementById('searchInput').addEventListener('input', function () {
             const query = this.value.trim().toLowerCase();
-            const items = document.querySelectorAll('.col');
+            const allItems = appContainer.querySelectorAll('.col');
 
-            if (!items.length) {
-                console.error('No se encontraron elementos con la clase .col');
-                return;
-            }
-
-            items.forEach(item => {
+            allItems.forEach(item => {
                 const card = item.querySelector('.card');
                 const textElement = card ? card.querySelector('p') : null;
 
@@ -371,6 +496,18 @@
                     item.classList.add('hidden');
                 }
             });
+
+            // Si hay un filtro activo, deshabilitar la paginación
+            const visibleItems = Array.from(allItems).filter(item => !item.classList.contains('hidden'));
+            if (query) {
+                pagination.style.display = 'none';
+                visibleItems.forEach(item => item.classList.remove('hidden'));
+            } else {
+                pagination.style.display = 'flex';
+                currentPage = 1;
+                showPage(currentPage);
+                updatePagination();
+            }
         });
     </script>
 </body>
