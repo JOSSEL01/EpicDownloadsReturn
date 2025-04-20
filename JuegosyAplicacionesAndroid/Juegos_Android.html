@@ -15,6 +15,12 @@
             flex-direction: column;
             min-height: 100vh;
             background-color: #f8f9fa;
+            margin: 0;
+            /* Fondo con patrón de íconos de juegos */
+            background-image: url('https://www.transparenttextures.com/patterns/game-controller.png');
+            background-size: 300px 300px;
+            background-repeat: repeat;
+            background-attachment: fixed;
         }
         h2 {
             margin-top: 20px;
@@ -27,6 +33,7 @@
             color: #fff;
             text-align: center;
             padding: 1rem;
+            width: 100%;
             margin-top: auto;
         }
         .navbar-custom {
@@ -72,6 +79,44 @@
         .col.hidden {
             opacity: 0;
             display: none;
+        }
+        .container {
+            flex: 1 0 auto;
+            margin-bottom: 3rem;
+        }
+        .pagination {
+            justify-content: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .page-item .page-link {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+            border-radius: 8px;
+            margin: 0 5px;
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        .page-item.active .page-link {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+        .page-item .page-link:hover {
+            background-color: #000;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        .page-item.disabled .page-link {
+            background-color: #ddd;
+            color: #666;
+            border-color: #666;
+            box-shadow: none;
+            cursor: not-allowed;
         }
     </style>
 </head>
@@ -142,7 +187,7 @@
     </div>
 
     <div class="container">
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4" id="gameContainer">
             <div class="col text-center">
                 <a href="https://drive.google.com/file/d/17wPGAnogKw8y44MJnqUEO-MG0Xbz74kM/view?usp=sharing" target="_blank" rel="noopener noreferrer" title="Descargar Assassin's Creed Revelations v1.0.8 para Android">
                     <div class="card">
@@ -288,22 +333,121 @@
                 </a>
             </div>
         </div>
+
+        <!-- Paginación -->
+        <nav aria-label="Paginación de juegos">
+            <ul class="pagination" id="pagination">
+                <li class="page-item" id="prevPage">
+                    <a class="page-link" href="#" aria-label="Anterior">
+                        <span aria-hidden="true">« Anterior</span>
+                    </a>
+                </li>
+                <!-- Los números de página se generarán dinámicamente -->
+                <li class="page-item" id="nextPage">
+                    <a class="page-link" href="#" aria-label="Siguiente">
+                        <span aria-hidden="true">Siguiente »</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
-    <footer class="footer">© JOSE ANDRES MAMANI MOLLERICONA</footer>
+    <footer class="footer">
+        © <a href="../Contactos.html" style="color: #fff; text-decoration: none;">JOSE ANDRES MAMANI MOLLERICONA</a>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
+        // Paginación
+        const itemsPerPage = 15; // 3 filas x 5 columnas = 15 juegos por página
+        const gameContainer = document.getElementById('gameContainer');
+        const items = gameContainer.querySelectorAll('.col');
+        const totalItems = items.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        let currentPage = 1;
+
+        // Generar los botones de paginación dinámicamente
+        const pagination = document.getElementById('pagination');
+        const prevPage = document.getElementById('prevPage');
+        const nextPage = document.getElementById('nextPage');
+
+        function generatePagination() {
+            // Limpiar los botones existentes, excepto "Anterior" y "Siguiente"
+            const existingPageItems = pagination.querySelectorAll('.page-item:not(#prevPage):not(#nextPage)');
+            existingPageItems.forEach(item => item.remove());
+
+            // Generar botones para cada página
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.classList.add('page-item');
+                if (i === currentPage) li.classList.add('active');
+                li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+                li.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    showPage(currentPage);
+                    updatePagination();
+                });
+                pagination.insertBefore(li, nextPage);
+            }
+        }
+
+        // Mostrar la página actual
+        function showPage(page) {
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+
+            items.forEach((item, index) => {
+                if (index >= start && index < end) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Actualizar estado de los botones "Anterior" y "Siguiente"
+            prevPage.classList.toggle('disabled', page === 1);
+            nextPage.classList.toggle('disabled', page === totalPages);
+        }
+
+        // Actualizar los botones de paginación
+        function updatePagination() {
+            const pageItems = pagination.querySelectorAll('.page-item:not(#prevPage):not(#nextPage)');
+            pageItems.forEach((item, index) => {
+                item.classList.toggle('active', index + 1 === currentPage);
+            });
+        }
+
+        // Evento para el botón "Anterior"
+        prevPage.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+                updatePagination();
+            }
+        });
+
+        // Evento para el botón "Siguiente"
+        nextPage.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+                updatePagination();
+            }
+        });
+
+        // Inicializar paginación
+        generatePagination();
+        showPage(currentPage);
+
+        // Búsqueda
         document.getElementById('searchInput').addEventListener('input', function () {
             const query = this.value.trim().toLowerCase();
-            const items = document.querySelectorAll('.col');
+            const allItems = gameContainer.querySelectorAll('.col');
 
-            if (!items.length) {
-                console.error('No se encontraron elementos con la clase .col');
-                return;
-            }
-
-            items.forEach(item => {
+            allItems.forEach(item => {
                 const card = item.querySelector('.card');
                 const textElement = card ? card.querySelector('p') : null;
 
@@ -319,6 +463,18 @@
                     item.classList.add('hidden');
                 }
             });
+
+            // Si hay un filtro activo, deshabilitar la paginación
+            const visibleItems = Array.from(allItems).filter(item => !item.classList.contains('hidden'));
+            if (query) {
+                pagination.style.display = 'none';
+                visibleItems.forEach(item => item.classList.remove('hidden'));
+            } else {
+                pagination.style.display = 'flex';
+                currentPage = 1;
+                showPage(currentPage);
+                updatePagination();
+            }
         });
     </script>
 </body>
