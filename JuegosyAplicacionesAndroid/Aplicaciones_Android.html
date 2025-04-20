@@ -460,9 +460,7 @@
         ];
 
         // Cambiar fondo según el día del mes (1-31)
-        const today = new Date();
-        const dayOfMonth = today.getDate(); // Día del mes (1-31)
-        const backgroundIndex = (dayOfMonth - 1) % backgrounds.length; // Selecciona un fondo basado en el día
+        const backgroundIndex = Math.floor(Math.random() * backgrounds.length);
         document.body.style.backgroundImage = `url('${backgrounds[backgroundIndex]}')`;
 
         // Paginación
