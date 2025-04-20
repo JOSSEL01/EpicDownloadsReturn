@@ -26,7 +26,12 @@
             margin-top: 20px;
             margin-bottom: 50px;
             font-weight: bold;
-            color: #333;
+            color: #fff; /* Cambiar a blanco para mejor contraste */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Contorno oscuro */
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+            padding: 10px 20px; /* Espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+            display: inline-block; /* Ajustar al tamaño del texto */
         }
         footer {
             background-color: #222;
@@ -90,33 +95,37 @@
             margin-bottom: 2rem;
         }
         .page-item .page-link {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo más opaco */
             color: #000;
-            border: 1px solid #000;
+            border: 2px solid #000; /* Borde más grueso y oscuro */
             border-radius: 8px;
             margin: 0 5px;
             padding: 10px 15px;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Contorno claro para el texto */
         }
         .page-item.active .page-link {
             background-color: #000;
             color: #fff;
             border-color: #000;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Contorno oscuro para texto blanco */
         }
         .page-item .page-link:hover {
             background-color: #000;
             color: #fff;
             transform: translateY(-2px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         .page-item.disabled .page-link {
-            background-color: #ddd;
+            background-color: rgba(200, 200, 200, 0.9); /* Fondo más opaco para deshabilitado */
             color: #666;
             border-color: #666;
             box-shadow: none;
             cursor: not-allowed;
+            text-shadow: none;
         }
     </style>
 </head>
