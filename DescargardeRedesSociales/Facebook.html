@@ -1,258 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="icon" href="img/icono.ico" />
-    <title>EpicDownloads</title>
+    <meta name="description" content="Descarga audio y video de Facebook con las mejores herramientas en línea. Encuentra opciones rápidas y gratuitas en Epic Downloads." />
+    <meta name="keywords" content="descargas, facebook, audio, video, epic downloads" />
+    <meta name="author" content="JOSE ANDRES MAMANI MOLLERICONA" />
+    <title>EpicDownloads - Descargar Audio y Video de Facebook</title>
     <style>
-      /* Estilos personalizados */
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
-      }
-
-      h2 {
-        margin-top: 20px;  /* Espacio arriba */
-        margin-bottom: 50px; /* Espacio abajo */
-      }
-
-      footer {
-        background-color: #f8f9fa;
-        border-top: 1px solid #ddd;
-        margin-top: auto; /* Empuja el footer hacia abajo */
-      }
-
-      .card {
-        height: 100%; /* Hace que todos los cards tengan la misma altura */
-      }
-
-      .modal-body {
-        padding: 0; /* Eliminar padding para el iframe */
-      }
-
-            /* Fondo de navbar más oscuro */
-            .navbar-custom {
-        background-color: #000000; /* Negro profundo */
-      }
-      .navbar-custom .navbar-brand,
-      .navbar-custom .nav-link,
-      .navbar-custom .navbar-toggler-icon {
-        color: #ffffff; /* Color del texto en blanco */
-      }
-
-      /* Estilo del pie de página */
-      .footer {
-        background-color: #222;
-        color: #fff;
-        text-align: center;
-        padding: 1rem;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-      }
-
-      .navbar-toggler {
-  border-color: #fff; /* Borde blanco */
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Agrega una sombra */
-}
-
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            font-weight: bold;
+            color: #333;
+        }
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+        .navbar-custom {
+            background-color: #000;
+        }
+        .navbar-custom .navbar-brand, 
+        .navbar-custom .nav-link, 
+        .navbar-custom .navbar-toggler-icon {
+            color: #fff;
+        }
+        .navbar-toggler {
+            border-color: #fff;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .card {
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            max-height: 100px;
+            object-fit: contain;
+            margin: 10px auto;
+        }
+        .col {
+            transition: opacity 0.3s ease;
+        }
+        .col.hidden {
+            opacity: 0;
+            display: none;
+        }
     </style>
 </head>
-
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-custom">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">Logo</a>
-      <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-      >
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <!-- Dropdown 1: DescargardeRedesSociales -->
-              <li class="nav-item dropdown">
-                  <a
-                      class="nav-link dropdown-toggle"
-                      href="#"
-                      id="navbarDropdown1"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-expanded="false"
-                  >
-                      Descargar de Redes Sociales
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                      <li><a class="dropdown-item" href="../DescargardeRedesSociales/Facebook.html">Facebook</a></li>
-                      <li><a class="dropdown-item" href="../DescargardeRedesSociales/Instagram.html">Instagram</a></li>
-                      <li><a class="dropdown-item" href="../DescargardeRedesSociales/Spotify.html">Spotify</a></li>
-                      <li><a class="dropdown-item" href="../DescargardeRedesSociales/Tik_Tok.html">TikTok</a></li>
-                      <li><a class="dropdown-item" href="../DescargardeRedesSociales/Twitter.html">Twitter</a></li>
-                      <li><a class="dropdown-item" href="../DescargardeRedesSociales/Youtube.html">YouTube</a></li>
-                  </ul>
-              </li>
-
-              <!-- Dropdown 2: Cloud(Nubes) -->
-              <li class="nav-item dropdown">
-                  <a
-                      class="nav-link dropdown-toggle"
-                      href="#"
-                      id="navbarDropdown2"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-expanded="false"
-                  >
-                      Cloud (Nubes)
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/Amazon_Drive.html">Amazon Drive</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/Box.html">Box</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/Dropbox.html">Dropbox</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/Google_Drive.html">Google Drive</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/Icedrive.html">Icedrive</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/Mediafire.html">Mediafire</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/Mega.html">Mega</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/NordLocker.html">NordLocker</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/OneDrive.html">OneDrive</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/pCloud.html">pCloud</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/Sync.html">Sync</a></li>
-                      <li><a class="dropdown-item" href="../Cloud(Nubes)/Terabox.html">Terabox</a></li>
-                  </ul>
-              </li>
-
-              <!-- Dropdown 3: JuegosyAplicacionesAndroid/ -->
-              <li class="nav-item dropdown">
-                  <a
-                      class="nav-link dropdown-toggle"
-                      href="#"
-                      id="navbarDropdown3"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-expanded="false"
-                  >
-                      Juegos y Aplicaciones Android
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                      <li><a class="dropdown-item" href="../JuegosyAplicacionesAndroid/Aplicaciones_Android.html">Aplicaciones Android</a></li>
-                      <li><a class="dropdown-item" href="../JuegosyAplicacionesAndroid/Juegos_Android.html">Juegos Android</a></li>
-                  </ul>
-              </li>
-
-              <!-- Enlace: Contactos -->
-              <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../Contactos.html">Contactos</a>
-              </li>
-          </ul>
-
-          <!-- Buscador alineado a la derecha -->
-          <form class="d-flex ml-auto">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" />
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
-      </div>
-  </div>
-</nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Descargar de Redes Sociales
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="../DescargardeRedesSociales/Facebook.html">Facebook</a></li>
+                            <li><a class="dropdown-item" href="../DescargardeRedesSociales/Instagram.html">Instagram</a></li>
+                            <li><a class="dropdown-item" href="../DescargardeRedesSociales/Spotify.html">Spotify</a></li>
+                            <li><a class="dropdown-item" href="../DescargardeRedesSociales/Tik_Tok.html">TikTok</a></li>
+                            <li><a class="dropdown-item" href="../DescargardeRedesSociales/Twitter.html">Twitter</a></li>
+                            <li><a class="dropdown-item" href="../DescargardeRedesSociales/Youtube.html">YouTube</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cloud (Nubes)
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/Amazon_Drive.html">Amazon Drive</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/Box.html">Box</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/Dropbox.html">Dropbox</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/Google_Drive.html">Google Drive</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/Icedrive.html">Icedrive</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/Mediafire.html">Mediafire</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/Mega.html">Mega</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/NordLocker.html">NordLocker</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/OneDrive.html">OneDrive</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/pCloud.html">pCloud</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/Sync.html">Sync</a></li>
+                            <li><a class="dropdown-item" href="../Cloud(Nubes)/Terabox.html">Terabox</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Juegos y Aplicaciones Android
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <li><a class="dropdown-item" href="../JuegosyAplicacionesAndroid/Aplicaciones_Android.html">Aplicaciones Android</a></li>
+                            <li><a class="dropdown-item" href="../JuegosyAplicacionesAndroid/Juegos_Android.html">Juegos Android</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../Contactos.html">Contactos</a>
+                    </li>
+                </ul>
+                <form class="d-flex ms-auto">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar opciones..." aria-label="Buscar opciones">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
     <div class="text-center mt-4">
         <h2>Descargar Audio y Video de Facebook</h2>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <a href="https://fdownloader.net/es" target="_blank">
-                            <img src="../img/1f.png" class="img-fluid" alt="Primera Opción" />
-                        </a>
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
+            <div class="col text-center">
+                <a href="https://fdownloader.net/es" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con FDownloader">
+                    <div class="card">
+                        <img src="../img/1f.png" alt="FDownloader - Descargar videos de Facebook" class="img-fluid" loading="lazy">
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <a href="https://fdown.net/es/index.php" target="_blank">
-                            <img src="../img/2f.png" class="img-fluid" alt="Segunda Opción" />
-                        </a>
+            <div class="col text-center">
+                <a href="https://fdown.net/es/index.php" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con FDown">
+                    <div class="card">
+                        <img src="../img/2f.png" alt="FDown - Descargar videos de Facebook" class="img-fluid" loading="lazy">
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <a href="https://snapsave.app/es" target="_blank">
-                            <img src="../img/3f.png" class="img-fluid" alt="Tercera Opción" />
-                        </a>
+            <div class="col text-center">
+                <a href="https://snapsave.app/es" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con SnapSave">
+                    <div class="card">
+                        <img src="../img/3f.png" alt="SnapSave - Descargar videos de Facebook" class="img-fluid" loading="lazy">
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <a href="https://fdownload.app/es" target="_blank">
-                            <img src="../img/4f.png" class="img-fluid" alt="Cuarta Opción" />
-                        </a>
+            <div class="col text-center">
+                <a href="https://fdownload.app/es" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con FDownload">
+                    <div class="card">
+                        <img src="../img/4f.png" alt="FDownload - Descargar videos de Facebook" class="img-fluid" loading="lazy">
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <a href="https://www.fbvideodown.com/es/download-facebook-videos.html" target="_blank">
-                            <img src="../img/5f.png" class="img-fluid" alt="Quinta Opción" />
-                        </a>
+            <div class="col text-center">
+                <a href="https://www.fbvideodown.com/es/download-facebook-videos.html" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con FBVideoDown">
+                    <div class="card">
+                        <img src="../img/5f.png" alt="FBVideoDown - Descargar videos de Facebook" class="img-fluid" loading="lazy">
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <a href="https://www.thetechlearn.com/video-downloader/es/descargar-videos-de-facebook-online/" target="_blank">
-                            <img src="../img/6f.png" class="img-fluid" alt="Sexta Opción" />
-                        </a>
+            <div class="col text-center">
+                <a href="https://www.thetechlearn.com/video-downloader/es/descargar-videos-de-facebook-online/" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con TheTechLearn">
+                    <div class="card">
+                        <img src="../img/6f.png" alt="TheTechLearn - Descargar videos de Facebook" class="img-fluid" loading="lazy">
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-                <div class="card text-center">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <a href="https://es.savefrom.net/9-how-to-download-facebook-video-163.html" target="_blank">
-                            <img src="../img/7f.png" class="img-fluid" alt="Septima Opción" />
-                        </a>
+            <div class="col text-center">
+                <a href="https://es.savefrom.net/9-how-to-download-facebook-video-163.html" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con SaveFrom">
+                    <div class="card">
+                        <img src="../img/7f.png" alt="SaveFrom - Descargar videos de Facebook" class="img-fluid" loading="lazy">
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
 
-    <footer class="footer text-center py-3">
-        &copy; JOSE ANDRES MAMANI MOLLERICONA
+    <footer class="footer">
+        © <a href="../Contactos.html" style="color: #fff; text-decoration: none;">JOSE ANDRES MAMANI MOLLERICONA</a>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function () {
+            const query = this.value.trim().toLowerCase();
+            const items = document.querySelectorAll('.col');
+
+            if (!items.length) {
+                console.error('No se encontraron elementos con la clase .col');
+                return;
+            }
+
+            items.forEach(item => {
+                const link = item.querySelector('a');
+                const title = link ? link.getAttribute('title')?.toLowerCase() : '';
+
+                if (title && title.includes(query)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
