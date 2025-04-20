@@ -402,9 +402,11 @@
             'https://images.unsplash.com/photo-1580238053495-b9720401fd45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'  // Dados de rol (repetido)
         ];
 
-        // Cambiar fondo según el día del mes (1-31)
+        // Seleccionar un fondo aleatorio en cada carga o recarga
         const backgroundIndex = Math.floor(Math.random() * backgrounds.length);
-        document.body.style.backgroundImage = `url('${backgrounds[backgroundIndex]}')`;
+        // Agregar un parámetro de consulta aleatorio para evitar caché
+        const cacheBuster = Date.now();
+        document.body.style.backgroundImage = `url('${backgrounds[backgroundIndex]}?cb=${cacheBuster}')`;
 
         // Paginación
         const itemsPerPage = 15; // 3 filas x 5 columnas = 15 juegos por página
