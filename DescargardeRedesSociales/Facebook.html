@@ -42,8 +42,8 @@
             text-decoration: none;
         }
         .navbar-custom .dropdown-menu .dropdown-item {
-            display: block !important; /* Aseguramos que los elementos del dropdown sean visibles */
-            opacity: 1 !important; /* Evitamos que se oculten */
+            display: block !important;
+            opacity: 1 !important;
         }
         .navbar-custom .dropdown-menu .dropdown-item.active {
             color: #fff;
@@ -64,6 +64,7 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
+            flex-direction: column; /* Aseguramos que los elementos se apilen verticalmente */
             align-items: center;
             justify-content: center;
             padding: 15px;
@@ -71,6 +72,11 @@
         .card:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .card-img-top {
+            max-height: 100px; /* Ajustamos el tamaño de las imágenes */
+            object-fit: contain;
+            margin-bottom: 10px; /* Espacio entre la imagen y el texto */
         }
         .card-text {
             color: #333;
@@ -183,6 +189,7 @@
             <div class="col text-center">
                 <a href="https://snapsave.app/es" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con SnapSave">
                     <div class="card">
+                        <img src="../img/3f.png" alt="SnapSave" class="card-img-top">
                         <div class="card-text">SnapSave</div>
                     </div>
                 </a>
