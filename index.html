@@ -8,9 +8,17 @@
       rel="stylesheet"
     />
     <link rel="icon" href="img/icono.ico" />
+    <meta name="description" content="Descarga los mejores juegos y aplicaciones para Android, y contenido de redes sociales y servicios en la nube en Epic Downloads." />
+    <meta name="keywords" content="descargas, android, juegos, aplicaciones, redes sociales, nube, epic downloads" />
+    <meta name="author" content="JOSE ANDRES MAMANI MOLLERICONA" />
     <title>EpicDownloads</title>
     <style>
-      /* Fondo de navbar más oscuro */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f8f9fa;
+      }
       .navbar-custom {
         background-color: #000000; /* Negro profundo */
       }
@@ -19,24 +27,23 @@
       .navbar-custom .navbar-toggler-icon {
         color: #ffffff; /* Color del texto en blanco */
       }
-
-      /* Estilo del pie de página */
+      .navbar-toggler {
+        border-color: #fff; /* Borde blanco */
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
       .footer {
         background-color: #222;
         color: #fff;
         text-align: center;
         padding: 1rem;
-        position: fixed;
-        bottom: 0;
+        margin-top: auto;
         width: 100%;
       }
-
-      .navbar-toggler {
-        border-color: #fff; /* Borde blanco */
-      }
-
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      .navbar-brand img {
+        height: 40px; /* Ajusta el tamaño del logo según sea necesario */
+        width: auto;
       }
     </style>
   </head>
@@ -45,7 +52,9 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Logo</a>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.png" alt="EpicDownloads Logo" class="img-fluid">
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -123,7 +132,9 @@
     </nav>
     
     <!-- Pie de página -->
-    <footer class="footer">© JOSE ANDRES MAMANI MOLLERICONA</footer>
+    <footer class="footer">
+      © <a href="Contactos.html" style="color: #fff; text-decoration: none;">JOSE ANDRES MAMANI MOLLERICONA</a>
+    </footer>
 
     <!-- Scripts de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
