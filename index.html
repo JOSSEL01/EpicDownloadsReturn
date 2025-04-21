@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
     />
     <link rel="icon" href="img/icono.ico" />
+    <meta name="description" content="Descarga los mejores juegos y aplicaciones para Android, y contenido de redes sociales y servicios en la nube en Epic Downloads." />
+    <meta name="keywords" content="descargas, android, juegos, aplicaciones, redes sociales, nube, epic downloads" />
+    <meta name="author" content="JOSE ANDRES MAMANI MOLLERICONA" />
     <title>EpicDownloads</title>
     <style>
-      /* Fondo de navbar más oscuro */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f8f9fa; /* Fondo de respaldo */
+        margin: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        /* Fondo de respaldo en caso de que las imágenes no se carguen */
+        background-image: linear-gradient(to bottom, #1e3c72, #2a5298); /* Gradiente de respaldo */
+      }
       .navbar-custom {
         background-color: #000000; /* Negro profundo */
       }
@@ -19,28 +36,86 @@
       .navbar-custom .navbar-toggler-icon {
         color: #ffffff; /* Color del texto en blanco */
       }
-
-      /* Estilo del pie de página */
+      .navbar-toggler {
+        border-color: #fff; /* Borde blanco */
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
       .footer {
         background-color: #222;
         color: #fff;
         text-align: center;
         padding: 1rem;
-        position: fixed;
-        bottom: 0;
         width: 100%;
+        margin-top: auto;
       }
-
-      .navbar-toggler {
-        border-color: #fff; /* Borde blanco */
+      h1 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 15px 30px;
+        border-radius: 15px;
+        display: inline-block;
       }
-
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      .lead {
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: inline-block;
+      }
+      .container {
+        flex: 1 0 auto;
+        margin-bottom: 3rem;
+      }
+      .card {
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .card img {
+        max-height: 100px;
+        object-fit: contain;
+        margin: 10px auto;
+      }
+      .card p {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      h3 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: inline-block;
+      }
+      .col {
+        transition: opacity 0.3s ease;
+        margin-bottom: 1.5rem;
+      }
+      .col.hidden {
+        opacity: 0;
+        display: none;
       }
     </style>
   </head>
-
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom">
@@ -49,8 +124,8 @@
         <button
           class="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -59,10 +134,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            
             <!-- Dropdown 1: Descargar de Redes Sociales -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Descargar de Redes Sociales
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
@@ -74,10 +148,9 @@
                 <li><a class="dropdown-item" href="DescargardeRedesSociales/Youtube.html">YouTube</a></li>
               </ul>
             </li>
-    
             <!-- Dropdown 2: Cloud (Nubes) -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Cloud (Nubes)
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
@@ -95,41 +168,146 @@
                 <li><a class="dropdown-item" href="Cloud(Nubes)/Terabox.html">Terabox</a></li>
               </ul>
             </li>
-    
             <!-- Dropdown 3: Android -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Android
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                <li><a class="dropdown-item" href="Aplicaciones_Android.html">Aplicaciones Android</a></li>
-                <li><a class="dropdown-item" href="Juegos_Android.html">Juegos Android</a></li>
-                <li><a class="dropdown-item" href="Emuladores_Android.html">Emuladores Android</a></li>
+                <li><a class="dropdown-item" href="JuegosyAplicacionesAndroid/Aplicaciones_Android.html">Aplicaciones Android</a></li>
+                <li><a class="dropdown-item" href="JuegosyAplicacionesAndroid/Juegos_Android.html">Juegos Android</a></li>
+                <li><a class="dropdown-item" href="JuegosyAplicacionesAndroid/Emuladores_Android.html">Emuladores Android</a></li>
               </ul>
-            </li>                
-    
+            </li>
             <!-- Enlace: Contactos -->
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="Contactos.html">Contactos</a>
             </li>
           </ul>
-    
           <!-- Buscador alineado a la derecha -->
-          <form class="d-flex ml-auto">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" />
+          <form class="d-flex ms-auto">
+            <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar juegos o aplicaciones..." aria-label="Buscar" />
             <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
         </div>
       </div>
     </nav>
-    
+
+    <!-- Contenido principal -->
+    <div class="container">
+      <!-- Sección de bienvenida -->
+      <div class="text-center mt-4">
+        <h1>¡Bienvenido a EpicDownloads!</h1>
+        <p class="lead">Descarga los mejores juegos y aplicaciones para Android, contenido de redes sociales y servicios en la nube.</p>
+      </div>
+
+      <!-- Sección de actualizaciones recientes -->
+      <div class="text-center">
+        <h3>Últimas Actualizaciones</h3>
+      </div>
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4" id="updatesContainer">
+        <!-- Las tarjetas se generarán dinámicamente -->
+      </div>
+    </div>
 
     <!-- Pie de página -->
-    <footer class="footer">&copy; JOSE ANDRES MAMANI MOLLERICONA</footer>
+    <footer class="footer">
+      © <a href="Contactos.html" style="color: #fff; text-decoration: none;">JOSE ANDRES MAMANI MOLLERICONA</a>
+    </footer>
 
     <!-- Scripts de Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      // Lista de fondos
+      const backgrounds = [
+        'https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1555685810-8d8819c7a7e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1509198397868-475647b2a8e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1612287230202-1ff1d85d2a90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1538485399081-7191377e8241?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1612198276140-0e7e0d41b0c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1593305841991-2a1b5d2851de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1551103782-8a5b2c2f1a1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+      ];
+
+      // Seleccionar un fondo aleatorio
+      const backgroundIndex = Math.floor(Math.random() * backgrounds.length);
+      const cacheBuster = Date.now();
+      document.body.style.backgroundImage = `url('${backgrounds[backgroundIndex]}?cb=${cacheBuster}')`;
+
+      // Función para generar dinámicamente la sección de actualizaciones recientes
+      function generateRecentUpdates(items) {
+        const updatesContainer = document.getElementById('updatesContainer');
+        
+        // Ordenar los elementos por fecha de actualización (más reciente primero)
+        const sortedItems = items.sort((a, b) => new Date(b.updated) - new Date(a.updated));
+        
+        // Tomar los 5 más recientes
+        const recentItems = sortedItems.slice(0, 5);
+
+        // Generar las tarjetas dinámicamente
+        recentItems.forEach(item => {
+          const col = document.createElement('div');
+          col.className = 'col text-center';
+          col.innerHTML = `
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" title="Descargar ${item.name}">
+              <div class="card">
+                <img src="${item.image}" alt="Ícono de ${item.name}" class="img-fluid" loading="lazy">
+                <p>${item.name}</p>
+              </div>
+            </a>
+          `;
+          updatesContainer.appendChild(col);
+        });
+      }
+
+      // Cargar los datos desde el archivo JSON
+      fetch('data/items.json')
+        .then(response => response.json())
+        .then(data => {
+          const items = data.items;
+
+          // Generar las actualizaciones recientes
+          generateRecentUpdates(items);
+
+          // Búsqueda
+          document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const matchingItems = items.filter(item => item.name.toLowerCase().includes(query));
+
+            if (matchingItems.length > 0) {
+              window.location.href = matchingItems[0].url;
+            } else {
+              alert('No se encontraron resultados para tu búsqueda.');
+            }
+          });
+
+          // Búsqueda en tiempo real para las actualizaciones recientes
+          document.getElementById('searchInput').addEventListener('input', function () {
+            const query = this.value.trim().toLowerCase();
+            const updatesContainer = document.getElementById('updatesContainer');
+            const allItems = updatesContainer.querySelectorAll('.col');
+
+            allItems.forEach(item => {
+              const card = item.querySelector('.card');
+              const textElement = card.querySelector('p');
+              const text = textElement.innerText.toLowerCase();
+
+              if (text.includes(query)) {
+                item.classList.remove('hidden');
+              } else {
+                item.classList.add('hidden');
+              }
+            });
+          });
+        })
+        .catch(error => {
+          console.error('Error al cargar los datos:', error);
+          alert('Hubo un error al cargar las actualizaciones. Por favor, intenta de nuevo más tarde.');
+        });
+    </script>
   </body>
 </html>
