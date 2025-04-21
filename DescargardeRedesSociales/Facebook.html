@@ -38,9 +38,13 @@
             color: #fff;
         }
         .navbar-custom .nav-link.active {
-            color: #28a745; /* Verde para resaltar el enlace activo (puedes cambiar el color) */
             font-weight: bold;
             text-decoration: underline;
+        }
+        .navbar-custom .dropdown-menu .dropdown-item.active {
+            color: #28a745; /* Verde para el enlace activo dentro del dropdown */
+            font-weight: bold;
+            background-color: #f8f9fa; /* Fondo claro para el dropdown */
         }
         .navbar-toggler {
             border-color: #fff;
@@ -52,18 +56,23 @@
             height: 100%;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
-            background-color: #fff;
+            background-color: #fff !important;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
         }
         .card:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-        .card img {
-            max-height: 100px;
-            object-fit: contain;
-            margin: 10px auto;
+        .card-text {
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
         }
         .col {
             transition: opacity 0.3s ease;
@@ -73,7 +82,7 @@
             display: none;
         }
         .navbar-brand img {
-            height: 40px; /* Ajusta el tamaño del logo según sea necesario */
+            height: 40px;
             width: auto;
         }
     </style>
@@ -91,11 +100,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Descargar de Redes Sociales
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="../DescargardeRedesSociales/Facebook.html">Facebook</a></li>
+                            <li><a class="dropdown-item active" href="../DescargardeRedesSociales/Facebook.html">Facebook</a></li>
                             <li><a class="dropdown-item" href="../DescargardeRedesSociales/Instagram.html">Instagram</a></li>
                             <li><a class="dropdown-item" href="../DescargardeRedesSociales/Spotify.html">Spotify</a></li>
                             <li><a class="dropdown-item" href="../DescargardeRedesSociales/Tik_Tok.html">TikTok</a></li>
@@ -134,7 +143,7 @@
                         </ul>
                     </li>      
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../Contactos.html">Contactos</a>
+                        <a class="nav-link" href="../Contactos.html">Contactos</a>
                     </li>
                 </ul>
                 <form class="d-flex ms-auto">
@@ -154,49 +163,49 @@
             <div class="col text-center">
                 <a href="https://fdownloader.net/es" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con FDownloader">
                     <div class="card">
-                        <img src="../img/1f.png" alt="FDownloader - Descargar videos de Facebook" class="img-fluid" loading="lazy">
+                        <div class="card-text">FDownloader</div>
                     </div>
                 </a>
             </div>
             <div class="col text-center">
                 <a href="https://fdown.net/es/index.php" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con FDown">
                     <div class="card">
-                        <img src="../img/2f.png" alt="FDown - Descargar videos de Facebook" class="img-fluid" loading="lazy">
+                        <div class="card-text">FDown</div>
                     </div>
                 </a>
             </div>
             <div class="col text-center">
                 <a href="https://snapsave.app/es" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con SnapSave">
                     <div class="card">
-                        <img src="../img/3f.png" alt="SnapSave - Descargar videos de Facebook" class="img-fluid" loading="lazy">
+                        <div class="card-text">SnapSave</div>
                     </div>
                 </a>
             </div>
             <div class="col text-center">
                 <a href="https://fdownload.app/es" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con FDownload">
                     <div class="card">
-                        <img src="../img/4f.png" alt="FDownload - Descargar videos de Facebook" class="img-fluid" loading="lazy">
+                        <div class="card-text">FDownload</div>
                     </div>
                 </a>
             </div>
             <div class="col text-center">
                 <a href="https://www.fbvideodown.com/es/download-facebook-videos.html" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con FBVideoDown">
                     <div class="card">
-                        <img src="../img/5f.png" alt="FBVideoDown - Descargar videos de Facebook" class="img-fluid" loading="lazy">
+                        <div class="card-text">FBVideoDown</div>
                     </div>
                 </a>
             </div>
             <div class="col text-center">
                 <a href="https://www.thetechlearn.com/video-downloader/es/descargar-videos-de-facebook-online/" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con TheTechLearn">
                     <div class="card">
-                        <img src="../img/6f.png" alt="TheTechLearn - Descargar videos de Facebook" class="img-fluid" loading="lazy">
+                        <div class="card-text">TheTechLearn</div>
                     </div>
                 </a>
             </div>
             <div class="col text-center">
                 <a href="https://es.savefrom.net/9-how-to-download-facebook-video-163.html" target="_blank" rel="noopener noreferrer" title="Descargar videos de Facebook con SaveFrom">
                     <div class="card">
-                        <img src="../img/7f.png" alt="SaveFrom - Descargar videos de Facebook" class="img-fluid" loading="lazy">
+                        <div class="card-text">SaveFrom</div>
                     </div>
                 </a>
             </div>
