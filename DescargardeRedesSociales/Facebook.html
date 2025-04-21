@@ -38,14 +38,17 @@
             color: #fff;
         }
         .navbar-custom .nav-link.active {
-            color: #28a745; /* Verde para el enlace activo */
-            font-weight: bold;
-            text-decoration: underline;
+            color: #fff;
+            text-decoration: none;
+        }
+        .navbar-custom .dropdown-menu .dropdown-item {
+            display: block !important; /* Aseguramos que los elementos del dropdown sean visibles */
+            opacity: 1 !important; /* Evitamos que se oculten */
         }
         .navbar-custom .dropdown-menu .dropdown-item.active {
-            color: #28a745; /* Verde para el enlace activo dentro del dropdown */
-            font-weight: bold;
-            background-color: #f8f9fa; /* Fondo claro para el dropdown */
+            color: #fff;
+            text-decoration: none;
+            background-color: #f8f9fa;
         }
         .navbar-toggler {
             border-color: #fff;
